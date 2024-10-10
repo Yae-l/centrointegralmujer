@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnos</title>
+    <style>
+        body {
+            background-image: url(mujeres2.jpg);
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #calendario {
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td:hover {
+            background-color: #f1f1f1;
+        }
+        .seleccionado {
+            background-color: #4CAF50;
+            color: white;
+        }
+      #wsp{
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+
+<h1>Selecciona tu turno</h1>
+<div id="calendario"></div>
+<p id="mensaje"></p>
+<p id="wsp">Una vez seleccionado tu turno comunicate al whatsapp: 38041234567</p>
+
+
+<script>
+    const diasDeLaSemana = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+    const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+    function crearCalendario(mes, año) {
+        const primerDia = new Date(año, mes, 1).getDay();
+        const totalDias = new Date(año, mes + 1, 0).getDate();
+        let html = '<table><tr><th colspan="7">' + meses[mes] + ' ' + año + '</th></tr><tr>';
+
+    
+        diasDeLaSemana.forEach(dia => {
+            html += '<th>' + dia + '</th>';
+        });
+        html += '</tr><tr>';
+
+       
+        for (let i = 0; i < primerDia; i++) {
+            html += '<td></td>';
+        }
+
+       
+        for (let dia = 1; dia <= totalDias; dia++) {
+            if ((dia + primerDia - 1) % 7 === 0 && dia !== 1) {
+                html += '</tr><tr>'; 
+            }
+            html += `<td onclick="seleccionarDia(${dia}, ${mes}, ${año})">${dia}</td>`;
+        }
+
+        html += '</tr></table>';
+        document.getElementById('calendario').innerHTML = html;
+    }
+
+    let fechaSeleccionada = null;
+
+    function seleccionarDia(dia, mes, año) {
+        if (fechaSeleccionada) {
+            fechaSeleccionada.classList.remove('seleccionado');
+        }
+        fechaSeleccionada = event.target; 
+        fechaSeleccionada.classList.add('seleccionado');
+        document.getElementById('mensaje').textContent = `Turno reservado para el ${dia} de ${meses[mes]} de ${año}`;
+    }
+
+    
+    const fechaActual = new Date();
+    crearCalendario(fechaActual.getMonth(), fechaActual.getFullYear());
+</script>
+
+</body>
+</html>

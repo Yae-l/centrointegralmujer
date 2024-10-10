@@ -1,0 +1,282 @@
+body {
+    font-family: 'serif', 'Open Sans', sans-serif, cursive; 
+    margin: 0;
+    padding: 0;
+    background-image: url("mujeres1.jpg");
+    background-color: grey (0, 0, 0, 0.5);
+    background-size: cover;
+    background-position-x: center;
+    position: relative;
+  }
+  
+  header {
+    background-image: url("mujeres2.jpg");
+    background-size: cover;
+    background-position-x: left;
+    padding: 220px;
+    color: whitesmoke;
+    text-align: center;
+  }
+  
+  #title {
+    font-family: serif;
+    font-size: 5rem;
+    color: white;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: pink;
+    padding: 10px;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #nosotros {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin right: 320px;
+    text-align: center;
+  }
+  
+  section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 700px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin right: 320px;
+}
+  
+  
+  aside {
+    position: fixed; 
+    top: 20px; 
+    right: 0; 
+    width: 150px;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10; 
+    font-family: sans-serif;
+  }
+  
+  
+  aside h2 {
+    font-family: sans-serif, serif;
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  aside label {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  aside input[type="text"],
+  aside input[type="email"],
+  aside textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #f48fb1;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  aside input[type="text"]:focus,
+  aside input[type="email"]:focus,
+  aside textarea:focus {
+    border-color: pink;
+    outline: none;
+  }
+  
+  aside button[type="submit"] {
+    background-color: pink;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  aside button[type="submit"]:hover {
+    background-color: pink;
+  }
+  
+ 
+  @media (max-width: 1024px) {
+    aside {
+      width: 250px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    aside {
+      position: relative;
+      width: 100%;
+      margin: 20px auto;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    aside {
+      padding: 20px;
+    }
+  
+    aside h2 {
+      font-size: 24px;
+    }
+  
+    aside button[type="submit"] {
+      font-size: 16px;
+    }
+  }
+  
+  footer {
+    background-color: pink;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .specialties {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: pink;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .specialty {
+    flex: 1 1 calc(50% - 20px);
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .specialty:hover {
+    background-color: palevioletred;
+    transform: translateY(-5px);
+  }
+  
+  @media (max-width: 768px) {
+    .specialty {
+      flex: 1 1 100%;
+    }
+  }
+  
+  #turnos {
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  
+  .cta-button {
+    background-color: pink;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #d81b60;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  footer {
+    background-color: #333;
+    padding: 20px 20px;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  footer p {
+    font-family: serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  footer a {
+    color: #e91e63;
+    margin: 0 10px;
+    font-size: 1.8rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: white;
+    transform: scale(1.2);
+  }
+
+  #calendario {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+th {
+    background-color: pink;
+}
+td:hover {
+    background-color: #f1f1f1;
+}
+.seleccionado {
+    background-color:#4CAF50;
+    color: white;
+}
